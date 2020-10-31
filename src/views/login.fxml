@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="450.0" prefWidth="500.0" style="-fx-background-color: #141124; -fx-background-radius: 7px; -fx-border-color: #5C5C5C; -fx-border-radius: 7px; -fx-border-width: 2px;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+   <children>
+      <Pane fx:id="verify_pin_scene" prefHeight="200.0" prefWidth="200.0" style="visibility: false;" styleClass="login_scenes" stylesheets="@../css/login.css">
+         <children>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#backToRequestPinFromVerifyPin" styleClass="back_button" stylesheets="@../css/login.css" text="Back">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" color="#0d0c14" height="128.9" radius="31.725" width="0.0" />
+               </effect>
+            </Button>
+            <Button fx:id="verify_btn" layoutX="190.0" layoutY="190.0" mnemonicParsing="false" onAction="#verifyCode" styleClass="request_and_verify_code_button" stylesheets="@../css/login.css" text="Verify">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" color="#0d0c14" height="128.9" radius="31.725" width="0.0" />
+               </effect>
+            </Button>
+            <TextField fx:id="code_input" alignment="CENTER" layoutX="85.0" layoutY="133.0" onAction="#verifyCode" onKeyReleased="#check" prefHeight="30.0" prefWidth="330.0" promptText="-- Verify Code --" styleClass="username_field" stylesheets="@../css/login.css">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" choke="0.27" color="#242424" height="82.66" radius="20.165" width="0.0" />
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Pane fx:id="request_pin_scene" prefHeight="200.0" prefWidth="200.0" style="visibility: false;" styleClass="login_scenes" stylesheets="@../css/login.css">
+         <children>
+            <TextField fx:id="email_input" layoutX="85.0" layoutY="170.0" onAction="#requestCode" prefHeight="30.0" prefWidth="330.0" promptText="Email" styleClass="username_field" stylesheets="@../css/login.css">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" choke="0.27" color="#242424" height="82.66" radius="20.165" width="0.0" />
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#backToLoginFromRequestPinScene" styleClass="back_button" stylesheets="@../css/login.css" text="Back">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" color="#0d0c14" height="128.9" radius="31.725" width="0.0" />
+               </effect>
+            </Button>
+            <Button layoutX="190.0" layoutY="245.0" mnemonicParsing="false" onAction="#requestCode" styleClass="request_and_verify_code_button" stylesheets="@../css/login.css" text="Continue">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" color="#0d0c14" height="128.9" radius="31.725" width="0.0" />
+               </effect>
+            </Button>
+            <Label alignment="CENTER" layoutX="85.0" layoutY="123.0" prefHeight="30.0" prefWidth="330.0" text="Enter your registered email address" textFill="#bd96ca">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="login_scene" prefHeight="200.0" prefWidth="200.0" styleClass="login_scenes" stylesheets="@../css/login.css">
+         <children>
+            <TextField fx:id="usr" layoutX="85.0" layoutY="158.0" onAction="#login" onKeyTyped="#usrKeyTyped" prefHeight="30.0" prefWidth="330.0" promptText="Username" styleClass="username_field" stylesheets="@../css/login.css">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" choke="0.27" color="#242424" height="82.66" radius="20.165" width="0.0" />
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="pwd" layoutX="85.0" layoutY="243.0" onAction="#login" onKeyTyped="#pwdKeyTyped" prefHeight="30.0" prefWidth="330.0" promptText="Password" styleClass="password_field" stylesheets="@../css/login.css">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" choke="0.25" color="#242424" height="82.65" radius="20.1625" width="0.0" />
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" top="1.0" />
+               </padding>
+            </PasswordField>
+            <Button layoutX="200.0" layoutY="319.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="100.0" styleClass="login_btn" stylesheets="@../css/login.css" text="Login" textFill="#dedede">
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" height="44.14" radius="23.372500000000002" spread="0.24" width="51.35" />
+               </effect>
+            </Button>
+            <Label fx:id="usrwarning" layoutX="85.0" layoutY="188.0" prefHeight="30.0" prefWidth="330.0" style="-fx-text-fill: #A04141;" text="Username is required!" />
+            <Label layoutX="32.0" layoutY="409.0" onMouseClicked="#toRequestPinFromLogin" styleClass="forgot_password" stylesheets="@../css/login.css" text="Forgot password?" textFill="#999999">
+               <font>
+                  <Font size="12.0" />
+               </font>
+               <effect>
+                  <Reflection fraction="0.87" topOpacity="0.32" />
+               </effect>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="193.0" layoutY="67.0" text="ADMIN LOGIN" textFill="#999999">
+               <font>
+                  <Font name="FreeSans" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="warning" alignment="CENTER" layoutX="161.0" layoutY="107.0" prefHeight="50.0" prefWidth="207.0" style="-fx-text-fill: #A04141;" text="Invalid username or password!" />
+            <Label fx:id="pwdwarning" layoutX="85.0" layoutY="273.0" prefHeight="30.0" prefWidth="330.0" style="-fx-text-fill: #A04141;" text="Password is required!" />
+         </children>
+      </Pane>
+      <Button layoutX="466.0" layoutY="14.0" maxHeight="15.0" maxWidth="15.0" minWidth="30.0" mnemonicParsing="false" onAction="#exit" prefHeight="15.0" prefWidth="15.0" style="-fx-min-width: 20; -fx-min-height: 20; -fx-font-size: 10; -fx-padding: 2px 0px 0px 0px;" styleClass="close_btn" stylesheets="@../css/login.css" text="X" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button layoutX="435.0" layoutY="14.0" maxHeight="15.0" maxWidth="15.0" minWidth="30.0" mnemonicParsing="false" onAction="#minimize" prefHeight="15.0" prefWidth="15.0" style="-fx-min-width: 20; -fx-min-height: 20; -fx-font-size: 10; -fx-padding: 0px 0px 4px 0px;" styleClass="minimize_btn" stylesheets="@../css/login.css" text="_" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="14.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+   </children>
+   <effect>
+      <InnerShadow blurType="GAUSSIAN" choke="0.32" color="#090411" height="95.63" radius="46.935" width="94.11" />
+   </effect>
+</AnchorPane>

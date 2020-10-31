@@ -1,0 +1,47 @@
+/*
+ *   Copyright (C) 2020 allie
+ *   Created on : Aug 1, 2020, 12:08:00 AM
+ *   Author     : allie
+ */
+
+
+/***************  TABLE VIEW  *************************************************/
+.table_view {
+    -fx-background-color: #141124;
+    -fx-background-radius: 10px;
+    -fx-pref-width: 1020;
+    -fx-pref-height: 455;
+    -fx-column-halignment: center;
+}
+
+/***************  SEARCH FIELD  ***********************************************/
+.search_field {
+    -fx-background-color: #141124;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #524A7B;
+    -fx-text-fill: #524A7B;
+    -fx-font-size: 15px;
+    -fx-pref-width: 886;
+    -fx-pref-height: 35;
+}
+
+/***************  BUTTONS  ****************************************************/
+.buttons {
+    -fx-background-color: #141124;
+    -fx-background-radius: 3px;
+    -fx-pref-width: 100;
+    -fx-pref-height: 35;
+    -fx-text-fill: #BD96CA;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px 5px 10px;
+}
+
+.buttons:hover {
+    -fx-background-color: #524A7B;
+    -fx-text-fill: #141124;
+}
+
+.buttons:pressed {
+    -fx-background-color: #2F2B43;
+}
