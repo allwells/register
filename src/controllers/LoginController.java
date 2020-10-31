@@ -116,8 +116,8 @@ public class LoginController implements Initializable {
 
     @FXML
     private void login(ActionEvent event) {
-        // authentication.LoginAuthen(usr, pwd, warning, usrwarning, pwdwarning);
-        scene.nextScene(event, "dashboard");
+        // authentication.LoginAuthen(event, usr, pwd, warning, usrwarning, pwdwarning);
+        scene.nextScene(event, "Dashboard");
     }
 
     @FXML
@@ -158,6 +158,6 @@ public class LoginController implements Initializable {
     @FXML
     private void verifyCode(ActionEvent event) throws IOException {
         //authentication.VerifyCodeInput(event, anchor, code_input, verify_btn);
-        scene.nextScene(event, "dashboard");
+        scene.nextScene(event, "Dashboard");
     }
 }

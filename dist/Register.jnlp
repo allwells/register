@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Register.jar" size="1060784" download="eager" />
+    <jar href="Register.jar" size="1061383" download="eager" />
     <jar href="lib/AbsoluteLayout.jar" size="2903" download="eager" />
     <jar href="lib/mysql-connector-java-5.1.49-bin.jar" size="1006906" download="eager" />
   </resources>
