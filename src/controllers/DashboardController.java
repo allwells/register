@@ -7,6 +7,10 @@
  */
 package controllers;
 
+import src.GetScene;
+import src.Authentication;
+import src.Function;
+import models.ModelTable;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -30,6 +34,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import src.Animation;
 
 public class DashboardController implements Initializable {
 

@@ -1,9 +1,9 @@
+package src;
+
 /*
  * Copyright (C) 2020 allie
  *
  */
-package controllers;
-
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
@@ -48,16 +48,16 @@ public class Function {
     private FileInputStream fis = null;
     private File file;
 
-    protected void close() {
+    public void close() {
         System.exit(0);
     }
 
-    protected void minimize(AnchorPane anchor) {
+    public void minimize(AnchorPane anchor) {
         Stage stage = (Stage) anchor.getScene().getWindow();
         stage.setIconified(true);
     }
 
-    protected void changePositionOnDrag(Parent root, Stage stage) {
+    public void changePositionOnDrag(Parent root, Stage stage) {
         root.setOnMousePressed((MouseEvent evt)
                 -> {
             xOffset = evt.getSceneX();
@@ -71,7 +71,7 @@ public class Function {
         });
     }
 
-    protected void CheckOnKeyTyped(TextField code_input, Button verify_btn) {
+    public void CheckOnKeyTyped(TextField code_input, Button verify_btn) {
         if (code_input.getText().length() == 6) {
             verify_btn.setDisable(false);
         } else {
@@ -79,7 +79,7 @@ public class Function {
         }
     }
 
-    protected void resetTableScene(TextField search_field, TextField update_finame, TextField update_lname, TextField update_email, TextField update_phone, ComboBox update_position, ToggleGroup gender2, RadioButton update_male) {
+    public void resetTableScene(TextField search_field, TextField update_finame, TextField update_lname, TextField update_email, TextField update_phone, ComboBox update_position, ToggleGroup gender2, RadioButton update_male) {
         search_field.setText("");
         update_finame.setText("");
         update_lname.setText("");
@@ -90,7 +90,7 @@ public class Function {
 
     }
 
-    protected void getProfile(Label tab_name, Button profile_button, Button deactivate1, Button deactivate2, Button deactivate3, Button deactivate4, Button deactivate5, Button deactivate6) {
+    public void getProfile(Label tab_name, Button profile_button, Button deactivate1, Button deactivate2, Button deactivate3, Button deactivate4, Button deactivate5, Button deactivate6) {
         final String activateBgColor = "-fx-background-color: #2F2B43;"
                 + "-fx-border-color: #9C71A9;"
                 + "-fx-border-width: 0px 0px 5px 0px;";
@@ -106,7 +106,7 @@ public class Function {
 
     }
 
-    protected void active(Label tab_name, Button activate0, Button deactivate1, Button deactivate2, Button deactivate3, Button deactivate4, Button deactivate5, Button deactivate6) {
+    public void active(Label tab_name, Button activate0, Button deactivate1, Button deactivate2, Button deactivate3, Button deactivate4, Button deactivate5, Button deactivate6) {
         final String activateBgColor = "-fx-background-color: #2F2B43;"
                 + "-fx-border-color: #9C71A9;"
                 + "-fx-border-width: 0px 0px 0px 5px;";
@@ -122,25 +122,25 @@ public class Function {
     }
 
     //Random Number Generation
-    protected void getRandomGen(int random_number, TextField id) {
+    public void getRandomGen(int random_number, TextField id) {
         Random random = new Random();
         random_number = random.nextInt(992467);
         id.setText("" + random_number);
     }
 
-    protected void onDragOver(DragEvent event) {
+    public void onDragOver(DragEvent event) {
         if (event.getDragboard().hasFiles()) {
             event.acceptTransferModes(TransferMode.ANY);
         }
     }
 
-    protected void onDragDropped(DragEvent event, ImageView image) throws FileNotFoundException {
+    public void onDragDropped(DragEvent event, ImageView image) throws FileNotFoundException {
         List<File> files = event.getDragboard().getFiles();
         Image img = new Image(new FileInputStream(files.get(0)));
         image.setImage(img);
     }
 
-    protected void setEnabled(Label label, TextField fname_txt_field, TextField lname_txt_field, TextField email_txt_field, TextField phone_txt_field, ImageView img_view, Button save_btn, Button change_btn, Button edit_btn) {
+    public void setEnabled(Label label, TextField fname_txt_field, TextField lname_txt_field, TextField email_txt_field, TextField phone_txt_field, ImageView img_view, Button save_btn, Button change_btn, Button edit_btn) {
         label.setDisable(false);
         fname_txt_field.setDisable(false);
         lname_txt_field.setDisable(false);
@@ -152,7 +152,7 @@ public class Function {
         edit_btn.setDisable(true);
     }
 
-    protected void setDisabled(Label label, TextField fname_txt_field, TextField lname_txt_field, TextField email_txt_field, TextField phone_txt_field, ImageView img_view, Button save_btn, Button change_btn, Button edit_btn) {
+    public void setDisabled(Label label, TextField fname_txt_field, TextField lname_txt_field, TextField email_txt_field, TextField phone_txt_field, ImageView img_view, Button save_btn, Button change_btn, Button edit_btn) {
         label.setDisable(true);
         fname_txt_field.setDisable(true);
         lname_txt_field.setDisable(true);
@@ -164,7 +164,7 @@ public class Function {
         edit_btn.setDisable(false);
     }
 
-    protected void onStart(Label tab_name, Button dashboard_btn, Button register_btn, Button settings_btn, Button profile_btn, Button notify_btn, Button edit_btn, Button table_btn, Pane dashboard_pane, Pane register_pane, Pane settings_pane, Pane profile_pane, Pane notify_pane, Pane table_pane) {
+    public void onStart(Label tab_name, Button dashboard_btn, Button register_btn, Button settings_btn, Button profile_btn, Button notify_btn, Button edit_btn, Button table_btn, Pane dashboard_pane, Pane register_pane, Pane settings_pane, Pane profile_pane, Pane notify_pane, Pane table_pane) {
         active(tab_name, dashboard_btn, register_btn, settings_btn, profile_btn, notify_btn, edit_btn, table_btn);
         dashboard_pane.setVisible(true);
         register_pane.setVisible(false);
@@ -174,14 +174,14 @@ public class Function {
         table_pane.setVisible(false);
     }
 
-    protected void getRegForms(Label tab_name, Pane pane01, Pane pane02, Button user_reg_btn, Button register_btn) {
+    public void getRegForms(Label tab_name, Pane pane01, Pane pane02, Button user_reg_btn, Button register_btn) {
         pane01.setVisible(true);
         pane02.setVisible(false);
         tab_name.setText(register_btn.getText() + "/" + user_reg_btn.getText().toLowerCase());
     }
 
     //Import Image
-    protected void importImage(ImageView imageView, Label labelView, String str) throws IOException {
+    public void importImage(ImageView imageView, Label labelView, String str) throws IOException {
         FileChooser chooser = new FileChooser();
 
 //        FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG Files (*.jpg)", "*.JPG");

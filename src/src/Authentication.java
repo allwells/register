@@ -1,9 +1,11 @@
+package src;
+
 /*
  * Copyright (C) 2020 allie
  *
  */
-package controllers;
 
+import models.ModelTable;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,7 +30,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javax.swing.JOptionPane;
-import register.sqlite_db_connection;
+import connection.sqlite_db_connection;
 
 /**
  *
@@ -101,7 +103,7 @@ public class Authentication {
             }
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Authentication.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -129,7 +131,7 @@ public class Authentication {
             }
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Authentication.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -177,7 +179,7 @@ public class Authentication {
             }
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Authentication.class.getName()).log(Level.SEVERE, null, ex);
         }
         col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         col_fname.setCellValueFactory(new PropertyValueFactory<>("fname"));
@@ -211,7 +213,7 @@ public class Authentication {
             }
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Authentication.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -242,7 +244,7 @@ public class Authentication {
                 }
                 con.close();
             } catch (SQLException ex) {
-                Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Authentication.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -275,7 +277,7 @@ public class Authentication {
                 }
                 con.close();
             } catch (SQLException ex) {
-                Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Authentication.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -301,7 +303,7 @@ public class Authentication {
             }
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Authentication.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -321,7 +323,7 @@ public class Authentication {
             }
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Authentication.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -348,7 +350,7 @@ public class Authentication {
             }
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Authentication.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

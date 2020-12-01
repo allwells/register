@@ -1,9 +1,9 @@
+package src;
+
 /*
  * Copyright (C) 2020 allie
  *
  */
-package controllers;
-
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,7 +32,7 @@ public class GetScene {
         this.animation = new Animation();
     }
 
-    protected void nextScene(ActionEvent event, String sceneName) {
+    public void nextScene(ActionEvent event, String sceneName) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/views/" + sceneName + ".fxml"));
             Node node = (Node) event.getSource();
@@ -47,12 +47,12 @@ public class GetScene {
         }
     }
 
-    protected void getNextScene(Pane pane) {
+    public void getNextScene(Pane pane) {
         pane.setVisible(true);
         this.animation.makeFadeInTransition(pane);
     }
 
-    protected void disposeCurrentScene(Pane pane) {
+    public void disposeCurrentScene(Pane pane) {
         pane.setVisible(false);
     }
 

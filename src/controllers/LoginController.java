@@ -1,5 +1,9 @@
 package controllers;
 
+import src.Function;
+import src.GetScene;
+import src.Authentication;
+import src.Animation;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

@@ -1,9 +1,9 @@
+package src;
+
 /*
  * Copyright (C) 2020 allie
  *
  */
-package controllers;
-
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -21,7 +21,7 @@ import javafx.util.Duration;
  */
 public class Animation {
 
-    protected void makeFadeInTransition(Pane scene) {
+    public void makeFadeInTransition(Pane scene) {
         FadeTransition fadeTransition = new FadeTransition();
         fadeTransition.setDuration(Duration.seconds(.3));
         fadeTransition.setNode(scene);
@@ -30,7 +30,7 @@ public class Animation {
         fadeTransition.play();
     }
 
-    protected void makeFadeOutTransition(Pane pane, GetScene scene) {
+    public void makeFadeOutTransition(Pane pane, GetScene scene) {
         FadeTransition fadeTransition = new FadeTransition();
         fadeTransition.setDuration(Duration.seconds(.6));
         fadeTransition.setNode(pane);
@@ -45,21 +45,21 @@ public class Animation {
         fadeTransition.play();
     }
 
-    protected void fadeIn(Label msg) {
+    public void fadeIn(Label msg) {
         FadeTransition ft = new FadeTransition(Duration.seconds(.5), msg);
         ft.setFromValue(0.0);
         ft.setToValue(1);
         ft.play();
     }
 
-    protected void fadeOut(Label msg) {
+    public void fadeOut(Label msg) {
         FadeTransition ft = new FadeTransition(Duration.seconds(.5), msg);
         ft.setFromValue(1);
         ft.setToValue(0.0);
         ft.play();
     }
 
-    protected void changePasswordAnimation(Button chng_btn, Button save, Button edit, Pane pane) {
+    public void changePasswordAnimation(Button chng_btn, Button save, Button edit, Pane pane) {
         chng_btn.setDisable(true);
 
         Timeline timeline = new Timeline();
@@ -80,7 +80,7 @@ public class Animation {
         timeline.play();
     }
 
-    protected void returnBackToNormalOnSave(Button chng_btn, Button save, Button edit, Pane pane) {
+    public void returnBackToNormalOnSave(Button chng_btn, Button save, Button edit, Pane pane) {
         pane.setVisible(false);
         Timeline timeline = new Timeline();
 
